@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>16 Circles</title>
+  <style>
+    body {
+        height: 95vh;
+        width: 95vw;
+    }
+
+    .circle {
+      width: min(20vh,20vw);
+      height: min(20vh,20vw);
+      background-color: #ccc;
+      border-radius: 500%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+
+    #tableChallenge{
+        height: 70vh;
+        width : 70vw;
+        margin: 0 auto;
+    }
+
+    .button {
+        height:5vh;
+        width:20vw;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        position: relative;
+        top: 5%;
+        left: 10%;
+    }
+
+    .button:hover {
+        background-color: #555555;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+  <table id="tableChallenge">
+  <tr class="row">
+      <td>
+        <div class="circle" id="circle-1" onclick="modifyCircle('circle-1')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-2" onclick="modifyCircle('circle-2')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-3" onclick="modifyCircle('circle-3')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-4" onclick="modifyCircle('circle-4')"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="circle" id="circle-5" onclick="modifyCircle('circle-5')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-6" onclick="modifyCircle('circle-6')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-7" onclick="modifyCircle('circle-7')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-8" onclick="modifyCircle('circle-8')"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="circle" id="circle-9" onclick="modifyCircle('circle-9')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-10" onclick="modifyCircle('circle-10')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-11" onclick="modifyCircle('circle-11')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-12" onclick="modifyCircle('circle-12')"></div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="circle" id="circle-13" onclick="modifyCircle('circle-13')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-14" onclick="modifyCircle('circle-14')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-15" onclick="modifyCircle('circle-15')"></div>
+      </td>
+      <td>
+        <div class="circle" id="circle-16" onclick="modifyCircle('circle-16')"></div>
+      </td>
+    </tr>
+  </table>
+  <button class="button" onclick="clearCache()">Reload</button>
+  <script>
+    var currInteger = 0
+    function modifyCircle(id){
+        currInteger++
+        document.getElementById(id).style.background = "#64d4ff"
+        document.getElementById(id).innerHTML = document.getElementById(id).innerHTML
+        ? document.getElementById(id).innerHTML + "," + currInteger : currInteger
+    }
+
+    function clearCache(){
+        location.reload()
+    }
+
+  </script>
+</body>
+</html>
